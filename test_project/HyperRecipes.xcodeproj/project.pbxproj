@@ -1,0 +1,808 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		056FBA0F183CD4C400C3C4ED /* Mogenerator */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 056FBA10183CD4C400C3C4ED /* Build configuration list for PBXAggregateTarget "Mogenerator" */;
+			buildPhases = (
+				056FBA13183CD62800C3C4ED /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Mogenerator;
+			productName = Mogenerator;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		053830CE183A4DB600ACC49D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053830CD183A4DB600ACC49D /* Foundation.framework */; };
+		053830D0183A4DB600ACC49D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053830CF183A4DB600ACC49D /* CoreGraphics.framework */; };
+		053830D2183A4DB600ACC49D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053830D1183A4DB600ACC49D /* UIKit.framework */; };
+		053830D8183A4DB600ACC49D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 053830D6183A4DB600ACC49D /* InfoPlist.strings */; };
+		053830DA183A4DB600ACC49D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 053830D9183A4DB600ACC49D /* main.m */; };
+		053830DE183A4DB600ACC49D /* HYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 053830DD183A4DB600ACC49D /* HYAppDelegate.m */; };
+		053830E1183A4DB600ACC49D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053830DF183A4DB600ACC49D /* Main.storyboard */; };
+		053830E4183A4DB600ACC49D /* HYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053830E3183A4DB600ACC49D /* HYViewController.m */; };
+		053830E6183A4DB600ACC49D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053830E5183A4DB600ACC49D /* Images.xcassets */; };
+		053830ED183A4DB600ACC49D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053830EC183A4DB600ACC49D /* XCTest.framework */; };
+		053830EE183A4DB600ACC49D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053830CD183A4DB600ACC49D /* Foundation.framework */; };
+		053830EF183A4DB600ACC49D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053830D1183A4DB600ACC49D /* UIKit.framework */; };
+		053830F7183A4DB600ACC49D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 053830F5183A4DB600ACC49D /* InfoPlist.strings */; };
+		053830F9183A4DB600ACC49D /* HyperRecipesClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 053830F8183A4DB600ACC49D /* HyperRecipesClientTests.m */; };
+		05383104183A531200ACC49D /* HYRecipesClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 05383103183A531200ACC49D /* HYRecipesClient.m */; };
+		0538311A183A552500ACC49D /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 05383108183A552500ACC49D /* AFHTTPClient.m */; };
+		0538311B183A552500ACC49D /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538310A183A552500ACC49D /* AFHTTPRequestOperation.m */; };
+		0538311C183A552500ACC49D /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538310C183A552500ACC49D /* AFImageRequestOperation.m */; };
+		0538311D183A552500ACC49D /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538310E183A552500ACC49D /* AFJSONRequestOperation.m */; };
+		0538311E183A552500ACC49D /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 05383110183A552500ACC49D /* AFNetworkActivityIndicatorManager.m */; };
+		0538311F183A552500ACC49D /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05383113183A552500ACC49D /* AFPropertyListRequestOperation.m */; };
+		05383120183A552500ACC49D /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05383115183A552500ACC49D /* AFURLConnectionOperation.m */; };
+		05383121183A552500ACC49D /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05383117183A552500ACC49D /* AFXMLRequestOperation.m */; };
+		05383122183A552500ACC49D /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 05383119183A552500ACC49D /* UIImageView+AFNetworking.m */; };
+		05383126183A65F700ACC49D /* HYRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 05383125183A65F700ACC49D /* HYRecipe.m */; };
+		05383129183A660A00ACC49D /* HYObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 05383128183A660A00ACC49D /* HYObject.m */; };
+		0538312D183A89E800ACC49D /* HYEditRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538312C183A89E800ACC49D /* HYEditRecipeViewController.m */; };
+		0538312F183A90EE00ACC49D /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0538312E183A90EE00ACC49D /* placeholder.jpg */; };
+		05383134183A989A00ACC49D /* UINavigationController+HYAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05383133183A989A00ACC49D /* UINavigationController+HYAdditions.m */; };
+		05383138183AB97800ACC49D /* HYRecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05383137183AB97800ACC49D /* HYRecipeTableViewCell.m */; };
+		056FBA0B183B825A00C3C4ED /* HYShowRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 056FBA0A183B825A00C3C4ED /* HYShowRecipeViewController.m */; };
+		056FBA98183D5AD300C3C4ED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056FBA97183D5AD300C3C4ED /* CoreData.framework */; };
+		056FBA9B183D5B2C00C3C4ED /* HYRecipes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 056FBA99183D5B2C00C3C4ED /* HYRecipes.xcdatamodeld */; };
+		05709FB0183D5E7B0077F52B /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 05709FAF183D5E7B0077F52B /* Recipe.m */; };
+		05709FD0183EC0FB0077F52B /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05709FCF183EC0FB0077F52B /* iCarousel.m */; };
+		05709FD3183EE1FF0077F52B /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = 05709FD1183EE1FF0077F52B /* favorite.png */; };
+		05709FD4183EE1FF0077F52B /* favorite_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 05709FD2183EE1FF0077F52B /* favorite_selected.png */; };
+		05709FD8183EE5510077F52B /* HYFavoriteCheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 05709FD7183EE5510077F52B /* HYFavoriteCheckbox.m */; };
+		05709FDB183EEE790077F52B /* HYStretchableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05709FDA183EEE790077F52B /* HYStretchableImageView.m */; };
+		05709FDD183EEF040077F52B /* recipe_title.png in Resources */ = {isa = PBXBuildFile; fileRef = 05709FDC183EEF040077F52B /* recipe_title.png */; };
+		05709FE1183FA4AB0077F52B /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 05709FE0183FA4AB0077F52B /* photo.png */; };
+		05709FE51843A4770077F52B /* HYShowRecipeViewControllerHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05709FE41843A4770077F52B /* HYShowRecipeViewControllerHeaderView.xib */; };
+		05709FE81843A5300077F52B /* HYShowRecipeViewControllerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05709FE71843A5300077F52B /* HYShowRecipeViewControllerHeaderView.m */; };
+		05709FEB1843A9580077F52B /* HYShowRecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05709FEA1843A9580077F52B /* HYShowRecipeTableViewCell.m */; };
+		05709FEE1843AC560077F52B /* UILabel+HYAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05709FED1843AC560077F52B /* UILabel+HYAdditions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		053830F0183A4DB600ACC49D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 053830C2183A4DB600ACC49D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 053830C9183A4DB600ACC49D;
+			remoteInfo = HyperRecipesClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		053830CA183A4DB600ACC49D /* HyperRecipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperRecipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		053830CD183A4DB600ACC49D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		053830CF183A4DB600ACC49D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		053830D1183A4DB600ACC49D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		053830D5183A4DB600ACC49D /* HyperRecipes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HyperRecipes-Info.plist"; sourceTree = "<group>"; };
+		053830D7183A4DB600ACC49D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		053830D9183A4DB600ACC49D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		053830DB183A4DB600ACC49D /* HyperRecipes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HyperRecipes-Prefix.pch"; sourceTree = "<group>"; };
+		053830DC183A4DB600ACC49D /* HYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYAppDelegate.h; sourceTree = "<group>"; };
+		053830DD183A4DB600ACC49D /* HYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYAppDelegate.m; sourceTree = "<group>"; };
+		053830E0183A4DB600ACC49D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		053830E2183A4DB600ACC49D /* HYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYViewController.h; sourceTree = "<group>"; };
+		053830E3183A4DB600ACC49D /* HYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYViewController.m; sourceTree = "<group>"; };
+		053830E5183A4DB600ACC49D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		053830EB183A4DB600ACC49D /* HyperRecipesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyperRecipesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		053830EC183A4DB600ACC49D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		053830F4183A4DB600ACC49D /* HyperRecipesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HyperRecipesTests-Info.plist"; sourceTree = "<group>"; };
+		053830F6183A4DB600ACC49D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		053830F8183A4DB600ACC49D /* HyperRecipesClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyperRecipesClientTests.m; sourceTree = "<group>"; };
+		05383102183A531200ACC49D /* HYRecipesClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYRecipesClient.h; sourceTree = "<group>"; };
+		05383103183A531200ACC49D /* HYRecipesClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYRecipesClient.m; sourceTree = "<group>"; };
+		05383107183A552500ACC49D /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		05383108183A552500ACC49D /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
+		05383109183A552500ACC49D /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		0538310A183A552500ACC49D /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		0538310B183A552500ACC49D /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		0538310C183A552500ACC49D /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
+		0538310D183A552500ACC49D /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		0538310E183A552500ACC49D /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		0538310F183A552500ACC49D /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		05383110183A552500ACC49D /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		05383111183A552500ACC49D /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		05383112183A552500ACC49D /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		05383113183A552500ACC49D /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		05383114183A552500ACC49D /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		05383115183A552500ACC49D /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		05383116183A552500ACC49D /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		05383117183A552500ACC49D /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
+		05383118183A552500ACC49D /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		05383119183A552500ACC49D /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		05383124183A65F700ACC49D /* HYRecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYRecipe.h; sourceTree = "<group>"; };
+		05383125183A65F700ACC49D /* HYRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYRecipe.m; sourceTree = "<group>"; };
+		05383127183A660A00ACC49D /* HYObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYObject.h; sourceTree = "<group>"; };
+		05383128183A660A00ACC49D /* HYObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYObject.m; sourceTree = "<group>"; };
+		0538312B183A89E800ACC49D /* HYEditRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYEditRecipeViewController.h; sourceTree = "<group>"; };
+		0538312C183A89E800ACC49D /* HYEditRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYEditRecipeViewController.m; sourceTree = "<group>"; };
+		0538312E183A90EE00ACC49D /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = placeholder.jpg; path = ../placeholder.jpg; sourceTree = "<group>"; };
+		05383132183A989A00ACC49D /* UINavigationController+HYAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+HYAdditions.h"; sourceTree = "<group>"; };
+		05383133183A989A00ACC49D /* UINavigationController+HYAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+HYAdditions.m"; sourceTree = "<group>"; };
+		05383136183AB97800ACC49D /* HYRecipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYRecipeTableViewCell.h; sourceTree = "<group>"; };
+		05383137183AB97800ACC49D /* HYRecipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYRecipeTableViewCell.m; sourceTree = "<group>"; };
+		056FBA09183B825A00C3C4ED /* HYShowRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYShowRecipeViewController.h; sourceTree = "<group>"; };
+		056FBA0A183B825A00C3C4ED /* HYShowRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYShowRecipeViewController.m; sourceTree = "<group>"; };
+		056FBA97183D5AD300C3C4ED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		056FBA9A183D5B2C00C3C4ED /* HYRecipes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HYRecipes.xcdatamodel; sourceTree = "<group>"; };
+		05709FAE183D5E7B0077F52B /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
+		05709FAF183D5E7B0077F52B /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
+		05709FCE183EC0FB0077F52B /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		05709FCF183EC0FB0077F52B /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		05709FD1183EE1FF0077F52B /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = favorite.png; path = ../favorite.png; sourceTree = "<group>"; };
+		05709FD2183EE1FF0077F52B /* favorite_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = favorite_selected.png; path = ../favorite_selected.png; sourceTree = "<group>"; };
+		05709FD6183EE5510077F52B /* HYFavoriteCheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYFavoriteCheckbox.h; sourceTree = "<group>"; };
+		05709FD7183EE5510077F52B /* HYFavoriteCheckbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYFavoriteCheckbox.m; sourceTree = "<group>"; };
+		05709FD9183EEE790077F52B /* HYStretchableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYStretchableImageView.h; sourceTree = "<group>"; };
+		05709FDA183EEE790077F52B /* HYStretchableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYStretchableImageView.m; sourceTree = "<group>"; };
+		05709FDC183EEF040077F52B /* recipe_title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recipe_title.png; sourceTree = "<group>"; };
+		05709FE0183FA4AB0077F52B /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
+		05709FE3184389C00077F52B /* HYConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYConstants.h; sourceTree = "<group>"; };
+		05709FE41843A4770077F52B /* HYShowRecipeViewControllerHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HYShowRecipeViewControllerHeaderView.xib; sourceTree = "<group>"; };
+		05709FE61843A5300077F52B /* HYShowRecipeViewControllerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYShowRecipeViewControllerHeaderView.h; sourceTree = "<group>"; };
+		05709FE71843A5300077F52B /* HYShowRecipeViewControllerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYShowRecipeViewControllerHeaderView.m; sourceTree = "<group>"; };
+		05709FE91843A9580077F52B /* HYShowRecipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYShowRecipeTableViewCell.h; sourceTree = "<group>"; };
+		05709FEA1843A9580077F52B /* HYShowRecipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYShowRecipeTableViewCell.m; sourceTree = "<group>"; };
+		05709FEC1843AC560077F52B /* UILabel+HYAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+HYAdditions.h"; sourceTree = "<group>"; };
+		05709FED1843AC560077F52B /* UILabel+HYAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+HYAdditions.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		053830C7183A4DB600ACC49D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				056FBA98183D5AD300C3C4ED /* CoreData.framework in Frameworks */,
+				053830D0183A4DB600ACC49D /* CoreGraphics.framework in Frameworks */,
+				053830D2183A4DB600ACC49D /* UIKit.framework in Frameworks */,
+				053830CE183A4DB600ACC49D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		053830E8183A4DB600ACC49D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				053830ED183A4DB600ACC49D /* XCTest.framework in Frameworks */,
+				053830EF183A4DB600ACC49D /* UIKit.framework in Frameworks */,
+				053830EE183A4DB600ACC49D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		053830C1183A4DB600ACC49D = {
+			isa = PBXGroup;
+			children = (
+				05383105183A552500ACC49D /* vendor */,
+				053830D3183A4DB600ACC49D /* HyperRecipesClient */,
+				053830F2183A4DB600ACC49D /* HyperRecipesClientTests */,
+				053830CC183A4DB600ACC49D /* Frameworks */,
+				053830CB183A4DB600ACC49D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		053830CB183A4DB600ACC49D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				053830CA183A4DB600ACC49D /* HyperRecipes.app */,
+				053830EB183A4DB600ACC49D /* HyperRecipesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		053830CC183A4DB600ACC49D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				056FBA97183D5AD300C3C4ED /* CoreData.framework */,
+				053830CD183A4DB600ACC49D /* Foundation.framework */,
+				053830CF183A4DB600ACC49D /* CoreGraphics.framework */,
+				053830D1183A4DB600ACC49D /* UIKit.framework */,
+				053830EC183A4DB600ACC49D /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		053830D3183A4DB600ACC49D /* HyperRecipesClient */ = {
+			isa = PBXGroup;
+			children = (
+				05709FD5183EE5310077F52B /* Views */,
+				056FBA96183D590600C3C4ED /* CoreData model */,
+				05383135183AB95B00ACC49D /* Cells */,
+				05383131183A986D00ACC49D /* Categories */,
+				05383130183A90FC00ACC49D /* Resources */,
+				0538312A183A89B900ACC49D /* Controllers */,
+				05383123183A65D600ACC49D /* Model */,
+				053830DC183A4DB600ACC49D /* HYAppDelegate.h */,
+				053830DD183A4DB600ACC49D /* HYAppDelegate.m */,
+				053830DF183A4DB600ACC49D /* Main.storyboard */,
+				053830E5183A4DB600ACC49D /* Images.xcassets */,
+				053830D4183A4DB600ACC49D /* Supporting Files */,
+				05383102183A531200ACC49D /* HYRecipesClient.h */,
+				05383103183A531200ACC49D /* HYRecipesClient.m */,
+				05709FE3184389C00077F52B /* HYConstants.h */,
+			);
+			path = HyperRecipesClient;
+			sourceTree = "<group>";
+		};
+		053830D4183A4DB600ACC49D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				053830D5183A4DB600ACC49D /* HyperRecipes-Info.plist */,
+				053830D6183A4DB600ACC49D /* InfoPlist.strings */,
+				053830D9183A4DB600ACC49D /* main.m */,
+				053830DB183A4DB600ACC49D /* HyperRecipes-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		053830F2183A4DB600ACC49D /* HyperRecipesClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				053830F8183A4DB600ACC49D /* HyperRecipesClientTests.m */,
+				053830F3183A4DB600ACC49D /* Supporting Files */,
+			);
+			path = HyperRecipesClientTests;
+			sourceTree = "<group>";
+		};
+		053830F3183A4DB600ACC49D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				053830F4183A4DB600ACC49D /* HyperRecipesTests-Info.plist */,
+				053830F5183A4DB600ACC49D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		05383105183A552500ACC49D /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				05709FCD183EC0FB0077F52B /* iCarousel */,
+				05383106183A552500ACC49D /* AFNetworking */,
+			);
+			path = vendor;
+			sourceTree = "<group>";
+		};
+		05383106183A552500ACC49D /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				05383107183A552500ACC49D /* AFHTTPClient.h */,
+				05383108183A552500ACC49D /* AFHTTPClient.m */,
+				05383109183A552500ACC49D /* AFHTTPRequestOperation.h */,
+				0538310A183A552500ACC49D /* AFHTTPRequestOperation.m */,
+				0538310B183A552500ACC49D /* AFImageRequestOperation.h */,
+				0538310C183A552500ACC49D /* AFImageRequestOperation.m */,
+				0538310D183A552500ACC49D /* AFJSONRequestOperation.h */,
+				0538310E183A552500ACC49D /* AFJSONRequestOperation.m */,
+				0538310F183A552500ACC49D /* AFNetworkActivityIndicatorManager.h */,
+				05383110183A552500ACC49D /* AFNetworkActivityIndicatorManager.m */,
+				05383111183A552500ACC49D /* AFNetworking.h */,
+				05383112183A552500ACC49D /* AFPropertyListRequestOperation.h */,
+				05383113183A552500ACC49D /* AFPropertyListRequestOperation.m */,
+				05383114183A552500ACC49D /* AFURLConnectionOperation.h */,
+				05383115183A552500ACC49D /* AFURLConnectionOperation.m */,
+				05383116183A552500ACC49D /* AFXMLRequestOperation.h */,
+				05383117183A552500ACC49D /* AFXMLRequestOperation.m */,
+				05383118183A552500ACC49D /* UIImageView+AFNetworking.h */,
+				05383119183A552500ACC49D /* UIImageView+AFNetworking.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		05383123183A65D600ACC49D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				05383124183A65F700ACC49D /* HYRecipe.h */,
+				05383125183A65F700ACC49D /* HYRecipe.m */,
+				05383127183A660A00ACC49D /* HYObject.h */,
+				05383128183A660A00ACC49D /* HYObject.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0538312A183A89B900ACC49D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				053830E2183A4DB600ACC49D /* HYViewController.h */,
+				053830E3183A4DB600ACC49D /* HYViewController.m */,
+				0538312B183A89E800ACC49D /* HYEditRecipeViewController.h */,
+				0538312C183A89E800ACC49D /* HYEditRecipeViewController.m */,
+				056FBA09183B825A00C3C4ED /* HYShowRecipeViewController.h */,
+				056FBA0A183B825A00C3C4ED /* HYShowRecipeViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		05383130183A90FC00ACC49D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				05709FE0183FA4AB0077F52B /* photo.png */,
+				05709FDC183EEF040077F52B /* recipe_title.png */,
+				05709FD1183EE1FF0077F52B /* favorite.png */,
+				05709FD2183EE1FF0077F52B /* favorite_selected.png */,
+				0538312E183A90EE00ACC49D /* placeholder.jpg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		05383131183A986D00ACC49D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				05383132183A989A00ACC49D /* UINavigationController+HYAdditions.h */,
+				05383133183A989A00ACC49D /* UINavigationController+HYAdditions.m */,
+				05709FEC1843AC560077F52B /* UILabel+HYAdditions.h */,
+				05709FED1843AC560077F52B /* UILabel+HYAdditions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		05383135183AB95B00ACC49D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				05383136183AB97800ACC49D /* HYRecipeTableViewCell.h */,
+				05383137183AB97800ACC49D /* HYRecipeTableViewCell.m */,
+				05709FE91843A9580077F52B /* HYShowRecipeTableViewCell.h */,
+				05709FEA1843A9580077F52B /* HYShowRecipeTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		056FBA96183D590600C3C4ED /* CoreData model */ = {
+			isa = PBXGroup;
+			children = (
+				05709FAE183D5E7B0077F52B /* Recipe.h */,
+				05709FAF183D5E7B0077F52B /* Recipe.m */,
+				056FBA99183D5B2C00C3C4ED /* HYRecipes.xcdatamodeld */,
+			);
+			name = "CoreData model";
+			sourceTree = "<group>";
+		};
+		05709FCD183EC0FB0077F52B /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				05709FCE183EC0FB0077F52B /* iCarousel.h */,
+				05709FCF183EC0FB0077F52B /* iCarousel.m */,
+			);
+			path = iCarousel;
+			sourceTree = "<group>";
+		};
+		05709FD5183EE5310077F52B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				05709FD6183EE5510077F52B /* HYFavoriteCheckbox.h */,
+				05709FD7183EE5510077F52B /* HYFavoriteCheckbox.m */,
+				05709FD9183EEE790077F52B /* HYStretchableImageView.h */,
+				05709FDA183EEE790077F52B /* HYStretchableImageView.m */,
+				05709FE41843A4770077F52B /* HYShowRecipeViewControllerHeaderView.xib */,
+				05709FE61843A5300077F52B /* HYShowRecipeViewControllerHeaderView.h */,
+				05709FE71843A5300077F52B /* HYShowRecipeViewControllerHeaderView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		053830C9183A4DB600ACC49D /* HyperRecipes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 053830FC183A4DB600ACC49D /* Build configuration list for PBXNativeTarget "HyperRecipes" */;
+			buildPhases = (
+				053830C6183A4DB600ACC49D /* Sources */,
+				053830C7183A4DB600ACC49D /* Frameworks */,
+				053830C8183A4DB600ACC49D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HyperRecipes;
+			productName = HyperRecipesClient;
+			productReference = 053830CA183A4DB600ACC49D /* HyperRecipes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		053830EA183A4DB600ACC49D /* HyperRecipesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 053830FF183A4DB600ACC49D /* Build configuration list for PBXNativeTarget "HyperRecipesTests" */;
+			buildPhases = (
+				053830E7183A4DB600ACC49D /* Sources */,
+				053830E8183A4DB600ACC49D /* Frameworks */,
+				053830E9183A4DB600ACC49D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				053830F1183A4DB600ACC49D /* PBXTargetDependency */,
+			);
+			name = HyperRecipesTests;
+			productName = HyperRecipesClientTests;
+			productReference = 053830EB183A4DB600ACC49D /* HyperRecipesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		053830C2183A4DB600ACC49D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HY;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Inertia;
+				TargetAttributes = {
+					053830C9183A4DB600ACC49D = {
+						DevelopmentTeam = L9GL5P4P8E;
+					};
+					053830EA183A4DB600ACC49D = {
+						TestTargetID = 053830C9183A4DB600ACC49D;
+					};
+				};
+			};
+			buildConfigurationList = 053830C5183A4DB600ACC49D /* Build configuration list for PBXProject "HyperRecipes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 053830C1183A4DB600ACC49D;
+			productRefGroup = 053830CB183A4DB600ACC49D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				053830C9183A4DB600ACC49D /* HyperRecipes */,
+				053830EA183A4DB600ACC49D /* HyperRecipesTests */,
+				056FBA0F183CD4C400C3C4ED /* Mogenerator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		053830C8183A4DB600ACC49D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				053830E6183A4DB600ACC49D /* Images.xcassets in Resources */,
+				05709FD3183EE1FF0077F52B /* favorite.png in Resources */,
+				05709FE51843A4770077F52B /* HYShowRecipeViewControllerHeaderView.xib in Resources */,
+				05709FD4183EE1FF0077F52B /* favorite_selected.png in Resources */,
+				0538312F183A90EE00ACC49D /* placeholder.jpg in Resources */,
+				053830D8183A4DB600ACC49D /* InfoPlist.strings in Resources */,
+				053830E1183A4DB600ACC49D /* Main.storyboard in Resources */,
+				05709FE1183FA4AB0077F52B /* photo.png in Resources */,
+				05709FDD183EEF040077F52B /* recipe_title.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		053830E9183A4DB600ACC49D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				053830F7183A4DB600ACC49D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		056FBA13183CD62800C3C4ED /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		053830C6183A4DB600ACC49D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05383120183A552500ACC49D /* AFURLConnectionOperation.m in Sources */,
+				05709FB0183D5E7B0077F52B /* Recipe.m in Sources */,
+				05383122183A552500ACC49D /* UIImageView+AFNetworking.m in Sources */,
+				05709FDB183EEE790077F52B /* HYStretchableImageView.m in Sources */,
+				05709FD8183EE5510077F52B /* HYFavoriteCheckbox.m in Sources */,
+				056FBA9B183D5B2C00C3C4ED /* HYRecipes.xcdatamodeld in Sources */,
+				05383138183AB97800ACC49D /* HYRecipeTableViewCell.m in Sources */,
+				05383126183A65F700ACC49D /* HYRecipe.m in Sources */,
+				05709FEE1843AC560077F52B /* UILabel+HYAdditions.m in Sources */,
+				0538311C183A552500ACC49D /* AFImageRequestOperation.m in Sources */,
+				05709FEB1843A9580077F52B /* HYShowRecipeTableViewCell.m in Sources */,
+				0538311B183A552500ACC49D /* AFHTTPRequestOperation.m in Sources */,
+				05709FE81843A5300077F52B /* HYShowRecipeViewControllerHeaderView.m in Sources */,
+				0538311A183A552500ACC49D /* AFHTTPClient.m in Sources */,
+				05383121183A552500ACC49D /* AFXMLRequestOperation.m in Sources */,
+				053830E4183A4DB600ACC49D /* HYViewController.m in Sources */,
+				053830DA183A4DB600ACC49D /* main.m in Sources */,
+				05383129183A660A00ACC49D /* HYObject.m in Sources */,
+				053830DE183A4DB600ACC49D /* HYAppDelegate.m in Sources */,
+				0538312D183A89E800ACC49D /* HYEditRecipeViewController.m in Sources */,
+				05709FD0183EC0FB0077F52B /* iCarousel.m in Sources */,
+				0538311D183A552500ACC49D /* AFJSONRequestOperation.m in Sources */,
+				05383104183A531200ACC49D /* HYRecipesClient.m in Sources */,
+				05383134183A989A00ACC49D /* UINavigationController+HYAdditions.m in Sources */,
+				0538311F183A552500ACC49D /* AFPropertyListRequestOperation.m in Sources */,
+				056FBA0B183B825A00C3C4ED /* HYShowRecipeViewController.m in Sources */,
+				0538311E183A552500ACC49D /* AFNetworkActivityIndicatorManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		053830E7183A4DB600ACC49D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				053830F9183A4DB600ACC49D /* HyperRecipesClientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		053830F1183A4DB600ACC49D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 053830C9183A4DB600ACC49D /* HyperRecipes */;
+			targetProxy = 053830F0183A4DB600ACC49D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		053830D6183A4DB600ACC49D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				053830D7183A4DB600ACC49D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		053830DF183A4DB600ACC49D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				053830E0183A4DB600ACC49D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		053830F5183A4DB600ACC49D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				053830F6183A4DB600ACC49D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		053830FA183A4DB600ACC49D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		053830FB183A4DB600ACC49D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		053830FD183A4DB600ACC49D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HyperRecipesClient/HyperRecipes-Prefix.pch";
+				INFOPLIST_FILE = "HyperRecipesClient/HyperRecipes-Info.plist";
+				PRODUCT_NAME = HyperRecipes;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		053830FE183A4DB600ACC49D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HyperRecipesClient/HyperRecipes-Prefix.pch";
+				INFOPLIST_FILE = "HyperRecipesClient/HyperRecipes-Info.plist";
+				PRODUCT_NAME = HyperRecipes;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		05383100183A4DB600ACC49D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HyperRecipesClient.app/HyperRecipesClient";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HyperRecipesClient/HyperRecipesClient-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HyperRecipesClientTests/HyperRecipesTests-Info.plist";
+				PRODUCT_NAME = HyperRecipesTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		05383101183A4DB600ACC49D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HyperRecipesClient.app/HyperRecipesClient";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HyperRecipesClient/HyperRecipesClient-Prefix.pch";
+				INFOPLIST_FILE = "HyperRecipesClientTests/HyperRecipesTests-Info.plist";
+				PRODUCT_NAME = HyperRecipesTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		056FBA11183CD4C400C3C4ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		056FBA12183CD4C400C3C4ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		053830C5183A4DB600ACC49D /* Build configuration list for PBXProject "HyperRecipes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				053830FA183A4DB600ACC49D /* Debug */,
+				053830FB183A4DB600ACC49D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		053830FC183A4DB600ACC49D /* Build configuration list for PBXNativeTarget "HyperRecipes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				053830FD183A4DB600ACC49D /* Debug */,
+				053830FE183A4DB600ACC49D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		053830FF183A4DB600ACC49D /* Build configuration list for PBXNativeTarget "HyperRecipesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05383100183A4DB600ACC49D /* Debug */,
+				05383101183A4DB600ACC49D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		056FBA10183CD4C400C3C4ED /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				056FBA11183CD4C400C3C4ED /* Debug */,
+				056FBA12183CD4C400C3C4ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		056FBA99183D5B2C00C3C4ED /* HYRecipes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				056FBA9A183D5B2C00C3C4ED /* HYRecipes.xcdatamodel */,
+			);
+			currentVersion = 056FBA9A183D5B2C00C3C4ED /* HYRecipes.xcdatamodel */;
+			path = HYRecipes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 053830C2183A4DB600ACC49D /* Project object */;
+}
