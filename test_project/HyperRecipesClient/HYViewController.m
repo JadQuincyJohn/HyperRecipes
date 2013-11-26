@@ -49,28 +49,44 @@
 #pragma mark - Load Recipes from WS
 - (void)loadRecipesFromWebService {
     [[HYRecipesClient sharedRecipesClient] startRecipesRequestWithSuccess:^(NSMutableArray *recipesArray) {
-        // Success
-        // Remove all recipes and recreate them
-        NSFetchRequest * allRecipes = [[NSFetchRequest alloc] init];
-        [allRecipes setEntity:[NSEntityDescription entityForName:@"Recipe" inManagedObjectContext:self.managedObjectContext]];
-        [allRecipes setIncludesPropertyValues:NO];
-        NSError * fetchAllError = nil;
-        NSArray * recipes = [self.managedObjectContext executeFetchRequest:allRecipes error:&fetchAllError];
-        for (NSManagedObject * recipe in recipes) {
-            [self.managedObjectContext deleteObject:recipe];
-        }
-        // Create / Fill recipe data
-        for (HYRecipe * rec in recipesArray) {
-            Recipe *newRecipe = [NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:self.managedObjectContext];
-            [newRecipe fillFromJSONRecipe:rec];
-        }
-        // Save insertions
-        NSError *insertionError = nil;
-        if (![self.managedObjectContext save:&insertionError]) {
-            NSLog(@"Error %@: ", [insertionError description]);
-            abort();
-        }
-        [self reloadData];
+        
+        NSManagedObjectContext *backgroundMOC = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        backgroundMOC.parentContext = self.managedObjectContext;
+
+        // Now this can safely be called from ANY thread:
+        [backgroundMOC performBlock:^{
+            NSFetchRequest * allRecipes = [[NSFetchRequest alloc] init];
+            [allRecipes setEntity:[NSEntityDescription entityForName:@"Recipe" inManagedObjectContext:backgroundMOC]];
+            [allRecipes setIncludesPropertyValues:NO];
+            NSError * fetchAllError = nil;
+            NSArray * recipes = [self.managedObjectContext executeFetchRequest:allRecipes error:&fetchAllError];
+            // Delete recipes by getting the ids to remove
+            NSMutableArray * array = [NSMutableArray array];
+            for (NSManagedObject * recipe in recipes) {
+                 [array addObject:recipe.objectID];
+            }
+            for (int i = 0; i < [array count]; i++) {
+                NSManagedObject * recipe = [backgroundMOC objectWithID:[array objectAtIndex:i]];
+                [backgroundMOC deleteObject:recipe];
+            }
+            
+            // Create / Fill recipe data
+            for (HYRecipe * rec in recipesArray) {
+                Recipe *newRecipe = [NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:backgroundMOC];
+                [newRecipe fillFromJSONRecipe:rec];
+            }
+            
+            // Save insertions
+            NSError *insertionError = nil;
+            if (![backgroundMOC save:&insertionError]) {
+                NSLog(@"Error %@: ", [insertionError description]);
+                abort();
+            }
+            
+            [self.managedObjectContext performBlock:^{
+                [self.tableView reloadData];
+            }];
+        }];
     } failure:^(NSError *error) {
         NSLog(@"Error : %@",[error description]);
     }];
@@ -183,17 +199,17 @@
     UITableView *tableView = self.tableView;
     switch(type) {
         case NSFetchedResultsChangeInsert:
-            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationNone];
             break;
         case NSFetchedResultsChangeDelete:
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
             break;
         case NSFetchedResultsChangeUpdate:
             [self configureCell:(HYRecipeTableViewCell *)[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
         case NSFetchedResultsChangeMove:
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationNone];
             break;
     }
 }

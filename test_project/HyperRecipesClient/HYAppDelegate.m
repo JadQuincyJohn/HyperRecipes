@@ -74,8 +74,6 @@
 }
 
 #pragma mark - CoreData
-
-#pragma mark - Core Data stack
 - (NSManagedObjectContext *) managedObjectContext {
     if (_managedObjectContext == nil) {
         NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
@@ -86,13 +84,10 @@
     }
     return _managedObjectContext;
 }
-#warning changes from recipe aple doc
+
 - (NSManagedObjectModel *)managedObjectModel {
     if (_managedObjectModel == nil) {
         _managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil] ;
-        /*
-        NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Recipes" withExtension:@"momd"];
-        _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];*/
     }
     return _managedObjectModel;
 }
