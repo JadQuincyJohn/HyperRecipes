@@ -7,9 +7,8 @@
 //
 
 #import "HYRecipeTableViewCell.h"
+#import "HYConstants.h"
 
 @implementation HYRecipeTableViewCell
-
-
 
 @end

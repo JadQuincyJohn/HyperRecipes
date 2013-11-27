@@ -15,7 +15,6 @@
 
 @interface HYEditRecipeViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-
 @property (nonatomic, weak) IBOutlet UIImageView *recipeImageView;
 @property (nonatomic, weak) IBOutlet UITextField *recipeNameTextfield;
 @property (nonatomic, weak) IBOutlet UITextField *recipeDescriptionTextfield;
@@ -145,18 +144,25 @@
             }
             // Invoke add service
             [[HYRecipesClient sharedRecipesClient] startAddRecipeRequestWithRecipe:self.recipe success:^{
-                
+                NSLog(@"Success adding recipe : %@",[self.recipe name]);
             } failure:^(NSError *error) {
                 NSLog(@"Error : %@",[error description]);
             }];
         }
         // Update recipe
         else {
-            NSError *error;
-            if (![self.recipe.managedObjectContext save:&error]) {
-                NSLog(@"Error : %@",[error description]);
-                abort();
-            }
+            NSManagedObjectContext *backgroundMOC = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+            
+            [backgroundMOC performBlock:^{
+                NSError *error;
+                NSLog(@"start");
+                if (![self.recipe.managedObjectContext save:&error]) {
+                    NSLog(@"Error : %@",[error description]);
+                    abort();
+                }
+                NSLog(@"end");
+            }];
+
             // Invoke update service
             [[HYRecipesClient sharedRecipesClient] startUpdateRecipeRequestWithRecipe:self.recipe success:^{
             } failure:^(NSError *error) {

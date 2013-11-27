@@ -12,7 +12,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="1" sectionFooterHeight="1" id="jca-k3-OTJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="1" sectionFooterHeight="1" id="jca-k3-OTJ">
                                 <rect key="frame" x="0.0" y="243" width="320" height="324"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,7 +45,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="TR7-tG-rse" id="y7d-3H-vhc"/>
                                             <outlet property="favoriteImageView" destination="Bqk-gW-hkJ" id="UMF-l2-hK3"/>
@@ -111,7 +113,7 @@
                                 <color key="backgroundColor" red="0.83137254900000002" green="0.83137254900000002" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.83137254900000002" green="0.83137254900000002" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HYShowRecipeTableViewCell" id="ghl-bs-y2o" customClass="HYShowRecipeTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="HYShowRecipeTableViewCell" id="ghl-bs-y2o" customClass="HYShowRecipeTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghl-bs-y2o" id="KO5-da-5xW">
@@ -119,7 +121,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4GK-e0-QH4">
-                                                    <rect key="frame" x="5" y="0.0" width="310" height="45"/>
+                                                    <rect key="frame" x="5" y="0.0" width="343" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.21176470588235294" green="0.21176470588235294" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
@@ -332,6 +334,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="q79-lb-SLu"/>
+        <segue reference="mrN-pF-gFc"/>
     </inferredMetricsTieBreakers>
 </document>

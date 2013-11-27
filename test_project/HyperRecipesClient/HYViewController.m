@@ -53,7 +53,6 @@
         NSManagedObjectContext *backgroundMOC = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
         backgroundMOC.parentContext = self.managedObjectContext;
 
-        // Now this can safely be called from ANY thread:
         [backgroundMOC performBlock:^{
             NSFetchRequest * allRecipes = [[NSFetchRequest alloc] init];
             [allRecipes setEntity:[NSEntityDescription entityForName:@"Recipe" inManagedObjectContext:backgroundMOC]];
@@ -83,8 +82,8 @@
                 abort();
             }
             
-            [self.managedObjectContext performBlock:^{
-                [self.tableView reloadData];
+            [backgroundMOC.parentContext performBlock:^{
+                [self reloadData];
             }];
         }];
     } failure:^(NSError *error) {
@@ -133,6 +132,12 @@
     HYRecipeTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HYRecipeTableViewCell class])];
     if (!cell) {
         cell = [[HYRecipeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([HYRecipeTableViewCell class])];
+        UIView * bView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+        bView.backgroundColor = hyperOrangeColor;
+        cell.selectedBackgroundView = bView;
+        
+        
+        
     }
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
@@ -144,21 +149,30 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Background MOC
+        NSManagedObjectContext *backgroundMOC = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        backgroundMOC.parentContext = self.managedObjectContext;
+        // Save the identifier paramaeter
         NSNumber * identifierToDelete = [self recipeAtIndexPath:indexPath].identifier;
-        // Delete the managed object.
-        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-        // Save
-        NSError *error;
-        if (![context save:&error]) {
-            NSLog(@"Error : %@",[error description]);
-            abort();
-        }
-        [self.tableView reloadData];
-        [self removeItemAtIndex:indexPath.row];
-        [self.carousel reloadData];
+        Recipe * recipe = (Recipe *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+        NSManagedObjectID * recipeID = recipe.objectID;
+        
+        [backgroundMOC performBlock:^{
+            NSManagedObject * recipe = [backgroundMOC objectWithID:recipeID];
+            [backgroundMOC deleteObject:recipe];
+
+            NSError *error;
+            if (![backgroundMOC save:&error]) {
+                NSLog(@"Error : %@",[error description]);
+                abort();
+            }
+            [backgroundMOC.parentContext performBlock:^{
+                [self reloadData];
+            }];
+        }];
+
         [[HYRecipesClient sharedRecipesClient] startDeleteRecipeRequestWithIdentifier:identifierToDelete success:^{
- 
+            NSLog(@"Success deleting recipe : %@", identifierToDelete);
         } failure:^(NSError *error) {
             NSLog(@"Error : %@",[error description]);
         }];
@@ -239,18 +253,27 @@
 #pragma mark - HYEditRecipeViewControllerDelegate protocol
 - (void)editViewController:(HYEditRecipeViewController *)controller didAddRecipe:(Recipe *)recipe {
     if (recipe) {
-        NSError *error;
-        NSManagedObjectContext *addingManagedObjectContext = [controller managedObjectContext];
-        if (![addingManagedObjectContext save:&error]) {
-            NSLog(@"Error : %@", [error description]);
-            abort();
-        }
+
+        NSManagedObjectContext *backgroundMOC = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        backgroundMOC.parentContext = self.managedObjectContext;
         
-        if (![[self.fetchedResultsController managedObjectContext] save:&error]) {
-            NSLog(@"Error : %@", [error description]);
-            abort();
-        }
-        [self reloadData];
+        [backgroundMOC performBlock:^{
+            NSError *error;
+            NSManagedObjectContext *addingManagedObjectContext = [controller managedObjectContext];
+            if (![addingManagedObjectContext save:&error]) {
+                NSLog(@"Error : %@", [error description]);
+                abort();
+            }
+            
+            if (![[self.fetchedResultsController managedObjectContext] save:&error]) {
+                NSLog(@"Error : %@", [error description]);
+                abort();
+            }
+            
+            [self.managedObjectContext performBlock:^{
+                [self reloadData];
+            }];
+        }];
     }
 }
 
@@ -269,9 +292,7 @@
     if (view == nil) {
         view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 160.0f)];
         view.contentMode  = UIViewContentModeScaleAspectFit;
-        UIImage * image = recipe.photo;
         ((UIImageView *)view).image = recipe.photo;
-        NSLog(@"%@",NSStringFromCGSize(image.size));
         view.tag = 1;
     }
     else {
